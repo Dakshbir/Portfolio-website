@@ -44,7 +44,7 @@ const Contact = () => {
     
     try {
       // Google Apps Script Web App URL - Replace with your actual deployment URL
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPOsoQS7TybWmW74mbIn36iRAmRD1hp2r8RZnA_3EwrwgqiX8eTlMbK_19nRE0YAbC/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_T876g6zFAfW_MRLuJXsunr4nLyNIp9jSh0ARE-x_CX-36MK-b5Rny6JVkbmxVcXv/exec';
       
       const dataToSend = {
         ...formData,

@@ -51,9 +51,10 @@ const About = () => {
   ];
 
   const achievements = [
-    { title: 'JEE Main Rank', value: '18,000', description: 'Among top performers' },
-    { title: 'JEE Advanced Rank', value: '16,000', description: 'IIT entrance examination' },
-    { title: 'School Topper', value: '3 Years', description: 'Consecutive years (X, XI, XII)' },
+    { title: 'JEE Mains Percentile', value: '99.37', description: 'Among top performers' },
+    { title: 'JEE Advanced Rank', value: '6,147', description: 'IIT entrance examination' },
+    { title: 'DSA + CP Problems', value: '500+', description: 'Across platforms' },
+    { title: 'School Topper', value: '3+ Years', description: 'Consecutive years' },
   ];
 
   return (
@@ -154,9 +155,8 @@ const About = () => {
                 style={{ transitionDelay: '500ms' }}
               >
                 <a 
-                  href="https://drive.google.com/file/d/1xSampleResumeLink/view?usp=sharing" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/cv.pdf" 
+                  download="Dakshbir_Singh_Kapoor_CV.pdf"
                   className="btn-primary"
                 >
                   <Download size={18} className="mr-2" />

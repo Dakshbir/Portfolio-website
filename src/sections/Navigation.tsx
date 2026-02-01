@@ -64,9 +64,8 @@ const Navigation = () => {
               {/* CTA Buttons */}
               <div className="hidden md:flex items-center gap-4">
                 <a 
-                  href="https://drive.google.com/file/d/1xSampleResumeLink/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/cv.pdf"
+                  download="Dakshbir_Singh_Kapoor_CV.pdf"
                   className="flex items-center gap-2 text-gray-400 hover:text-[#c0f748] transition-colors text-sm"
                 >
                   <Download size={16} />
@@ -133,9 +132,8 @@ const Navigation = () => {
           style={{ transitionDelay: '300ms' }}
           >
             <a 
-              href="https://drive.google.com/file/d/1xSampleResumeLink/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/cv.pdf"
+              download="Dakshbir_Singh_Kapoor_CV.pdf"
               className="flex items-center gap-2 text-gray-400 hover:text-[#c0f748] transition-colors"
             >
               <Download size={18} />

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, FileText, Sparkles, Database, Dumbbell, Youtube } from 'lucide-react';
+import { ExternalLink, Github, FileText, Sparkles, Database, Dumbbell } from 'lucide-react';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,8 +36,7 @@ const Projects = () => {
       featured: true,
       techStack: ['TensorFlow', 'CNN', 'Clustering', 'TFRecord', '3D Analytics', 'Research'],
       links: {
-        demo: 'https://sql-query-agent.vercel.app/',
-        github: 'https://github.com/Dakshbir',
+        demo: 'https://www.youtube.com/watch?v=WOB1sP4JKfU',
         paper: '#'
       }
     },
@@ -168,15 +167,6 @@ const Projects = () => {
                     
                     <div className="flex gap-3">
                       <a 
-                        href={projects[0].links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0a0a0a] border border-[#2a2a2a] text-gray-300 hover:text-[#c0f748] hover:border-[#c0f748]/50 transition-all duration-300"
-                      >
-                        <Github size={18} />
-                        <span className="text-sm">Code</span>
-                      </a>
-                      <a 
                         href={projects[0].links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -250,15 +240,6 @@ const Projects = () => {
                     >
                       <Github size={16} />
                       <span>Code</span>
-                    </a>
-                    <a 
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0a0a0a] border border-[#2a2a2a] text-gray-300 hover:text-[#c0f748] hover:border-[#c0f748]/50 transition-all duration-300 text-sm"
-                    >
-                      {project.title === 'Fitness Chatbot' ? <Youtube size={16} /> : <ExternalLink size={16} />}
-                      <span>{project.title === 'Fitness Chatbot' ? 'Video' : 'Demo'}</span>
                     </a>
                   </div>
                 </div>

@@ -42,23 +42,33 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Store form data in localStorage for viewing
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    submissions.push({
-      ...formData,
-      timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success('Message sent successfully! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-    
-    // Log to console for viewing data
-    console.log('Contact Form Submissions:', submissions);
+    try {
+      // Google Apps Script Web App URL - Replace with your actual deployment URL
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPOsoQS7TybWmW74mbIn36iRAmRD1hp2r8RZnA_3EwrwgqiX8eTlMbK_19nRE0YAbC/exec';
+      
+      const dataToSend = {
+        ...formData,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Send data to Google Sheets
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend)
+      });
+      
+      toast.success('Message sent successfully! I\'ll get back to you soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -235,23 +245,6 @@ const Contact = () => {
                       Send Message
                     </span>
                   )}
-                </button>
-
-                {/* View Data Button (for admin) */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    const data = localStorage.getItem('contactSubmissions');
-                    if (data) {
-                      console.log('All Contact Submissions:', JSON.parse(data));
-                      toast.info('Check console for submitted data');
-                    } else {
-                      toast.info('No submissions yet');
-                    }
-                  }}
-                  className="ml-4 text-gray-500 text-sm hover:text-[#c0f748] transition-colors"
-                >
-                  View Data
                 </button>
               </form>
             </div>

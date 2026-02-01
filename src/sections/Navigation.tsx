@@ -64,7 +64,7 @@ const Navigation = () => {
               {/* CTA Buttons */}
               <div className="hidden md:flex items-center gap-4">
                 <a 
-                  href="/cv.pdf"
+                  href="./images/cv.pdf"
                   download="Dakshbir_Singh_Kapoor_CV.pdf"
                   className="flex items-center gap-2 text-gray-400 hover:text-[#c0f748] transition-colors text-sm"
                 >
@@ -132,7 +132,7 @@ const Navigation = () => {
           style={{ transitionDelay: '300ms' }}
           >
             <a 
-              href="/cv.pdf"
+              href="./images/cv.pdf"
               download="Dakshbir_Singh_Kapoor_CV.pdf"
               className="flex items-center gap-2 text-gray-400 hover:text-[#c0f748] transition-colors"
             >

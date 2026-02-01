@@ -88,7 +88,7 @@ const About = () => {
               >
                 <div className="relative overflow-hidden rounded-2xl border border-[#2a2a2a] group">
                   <img 
-                    src="/images/profile.jpg" 
+                    src="./images/profile.jpg" 
                     alt="Dakshbir Singh Kapoor"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -155,7 +155,7 @@ const About = () => {
                 style={{ transitionDelay: '500ms' }}
               >
                 <a 
-                  href="/cv.pdf" 
+                  href="./images/cv.pdf" 
                   download="Dakshbir_Singh_Kapoor_CV.pdf"
                   className="btn-primary"
                 >

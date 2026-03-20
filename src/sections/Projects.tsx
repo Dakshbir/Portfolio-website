@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, FileText, Sparkles, Database } from 'lucide-react';
+import { ExternalLink, FileText, Sparkles, Database } from 'lucide-react';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,7 +45,7 @@ const Projects = () => {
       subtitle: 'LLM-based SQL Generation System',
       description: 'LLM-based backend for automated SQL generation and correction using Groq API, few-shot learning, and async processing.',
       research: false,
-      image: './images/ai-sql.jpg',
+      image: './images/ai-sql-new.jpg',
       icon: Database,
       featured: false,
       techStack: ['Groq API', 'LLM', 'Few-shot Learning', 'Async Processing'],
@@ -59,7 +59,7 @@ const Projects = () => {
       subtitle: 'RNN & LSTM Deep Learning Pipeline',
       description: 'End-to-end deep learning pipeline predicting stock prices for any ticker using multivariate LSTM with RSI, MACD, and Bollinger Bands as features. Deployed as an interactive forecasting app achieving ~60% directional accuracy and 5% RMSE improvement over baseline RNN.',
       research: false,
-      image: './images/ai-sql.jpg',
+      image: './images/stock-forecast.jpg',
       icon: Database,
       featured: false,
       techStack: ['Python', 'TensorFlow', 'LSTM', 'RNN', 'RSI', 'MACD', 'Bollinger Bands'],
@@ -232,14 +232,14 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3 mt-auto">
-                    <a 
-                      href={project.links.github}
+                    <a
+                      href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0a0a0a] border border-[#2a2a2a] text-gray-300 hover:text-[#c0f748] hover:border-[#c0f748]/50 transition-all duration-300 text-sm"
                     >
-                      <Github size={16} />
-                      <span>Code</span>
+                      <ExternalLink size={16} />
+                      <span>Link</span>
                     </a>
                   </div>
                 </div>

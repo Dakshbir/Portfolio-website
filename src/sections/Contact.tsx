@@ -44,21 +44,19 @@ const Contact = () => {
     
     try {
       // Google Apps Script Web App URL - Replace with your actual deployment URL
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_T876g6zFAfW_MRLuJXsunr4nLyNIp9jSh0ARE-x_CX-36MK-b5Rny6JVkbmxVcXv/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoKwZPXHq_G6vu0o6acOY2zvWS119C8Ia3zLPTdnjj2dEsYcLQJldHuUqHRC-HTQ3R/exec';
       
-      const dataToSend = {
-        ...formData,
+      // Send data to Google Sheets via GET (required for no-cors with Apps Script)
+      const params = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
         timestamp: new Date().toISOString()
-      };
-      
-      // Send data to Google Sheets
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
+      });
+      await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
+        method: 'GET',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend)
       });
       
       toast.success('Message sent successfully! I\'ll get back to you soon.');

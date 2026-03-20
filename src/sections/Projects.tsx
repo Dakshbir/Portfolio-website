@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, FileText, Sparkles, Database, Dumbbell } from 'lucide-react';
+import { ExternalLink, Github, FileText, Sparkles, Database } from 'lucide-react';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -55,17 +55,17 @@ const Projects = () => {
       }
     },
     {
-      title: 'Fitness Chatbot',
-      subtitle: 'RAG-enabled Fitness AI',
-      description: 'RAG-enabled fitness chatbot with LangChain and Llama2 API for health and fitness guidance.',
+      title: 'Stock Price Forecasting',
+      subtitle: 'RNN & LSTM Deep Learning Pipeline',
+      description: 'End-to-end deep learning pipeline predicting stock prices for any ticker using multivariate LSTM with RSI, MACD, and Bollinger Bands as features. Deployed as an interactive forecasting app achieving ~60% directional accuracy and 5% RMSE improvement over baseline RNN.',
       research: false,
-      image: './images/fitness-chatbot.jpg',
-      icon: Dumbbell,
+      image: './images/ai-sql.jpg',
+      icon: Database,
       featured: false,
-      techStack: ['RAG', 'LangChain', 'Llama2 API', 'Generative AI'],
+      techStack: ['Python', 'TensorFlow', 'LSTM', 'RNN', 'RSI', 'MACD', 'Bollinger Bands'],
       links: {
-        demo: 'https://www.youtube.com/watch?v=WOB1sP4JKfU',
-        github: 'https://github.com/Dakshbir/Basic-Fitness-Chatbot'
+        demo: 'https://stock-price-prediction-lstm-rnn.streamlit.app/',
+        github: 'https://github.com/Dakshbir/Stock-Price-Prediction'
       }
     }
   ];

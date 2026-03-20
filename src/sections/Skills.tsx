@@ -1,16 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { 
-  Code2, 
-  Database, 
-  Brain, 
-  Network, 
-  Cpu, 
-  MessageSquare, 
-  GitBranch,
-  Terminal,
-  Box,
-  Microscope
-} from 'lucide-react';
+import { Code2, Database, Brain, Cpu, MessageSquare, Microscope } from 'lucide-react';
 
 const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -73,12 +62,6 @@ const Skills = () => {
     },
   ];
 
-  const tools = [
-    { name: 'GitHub', icon: GitBranch },
-    { name: 'Hugging Face', icon: Network },
-    { name: 'Docker', icon: Box },
-    { name: 'Linux', icon: Terminal },
-  ];
 
   return (
     <section 
@@ -142,57 +125,6 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Tools Section */}
-          <div 
-            className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: '800ms' }}
-          >
-            <h3 className="text-xl font-semibold text-white text-center mb-8" style={{ fontFamily: 'Oswald, sans-serif' }}>
-              TOOLS <span className="text-[#c0f748]">& PLATFORMS</span>
-            </h3>
-            
-            <div className="flex flex-wrap justify-center gap-6">
-              {tools.map((tool, index) => (
-                <div 
-                  key={index}
-                  className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-[#161616] border border-[#2a2a2a] hover:border-[#c0f748]/50 hover:-translate-y-2 transition-all duration-300 group"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-[#c0f748]/10 flex items-center justify-center group-hover:bg-[#c0f748]/20 transition-colors">
-                    <tool.icon className="w-7 h-7 text-[#c0f748]" />
-                  </div>
-                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
-                    {tool.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Skill Level Indicator */}
-          <div 
-            className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: '1000ms' }}
-          >
-            {[
-              { label: 'Machine Learning', level: '90%' },
-              { label: 'Deep Learning', level: '85%' },
-              { label: 'Research', level: '80%' },
-              { label: 'Data Processing', level: '88%' },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-[#c0f748] mb-2" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                  {item.level}
-                </div>
-                <div className="text-gray-400 text-sm">{item.label}</div>
-                <div className="mt-3 h-1.5 bg-[#2a2a2a] rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-[#c0f748] to-[#8bc34a] rounded-full transition-all duration-1000"
-                    style={{ width: isVisible ? item.level : '0%', transitionDelay: `${1200 + index * 100}ms` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

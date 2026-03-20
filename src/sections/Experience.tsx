@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Briefcase, Calendar, MapPin, ExternalLink, Users, Award, Code, Building2 } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, ExternalLink, Award, Building2 } from 'lucide-react';
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,7 +27,7 @@ const Experience = () => {
     {
       company: 'Microsoft',
       role: 'Software Engineering Intern (Upcoming)',
-      duration: 'Summer 2025',
+      duration: 'Summer 2026',
       location: 'India',
       description: 'Selected for the prestigious Microsoft internship program. Will be working on cutting-edge AI/ML and cloud technologies.',
       achievement: 'One of the select few chosen from thousands of applicants across the country.',
@@ -51,23 +51,23 @@ const Experience = () => {
     {
       company: 'Sabudh Organisation',
       role: 'Data Science Intern',
-      duration: 'Previous Experience',
+      duration: 'May 2024 - July 2024',
       location: 'Remote/On-site',
       description: 'Worked on data science projects involving data analysis, machine learning model development, and visualization. Gained hands-on experience with real-world datasets and industry-standard tools.',
       achievement: 'Contributed to meaningful data-driven solutions and improved analytical skills.',
-      techStack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Data Visualization'],
+      techStack: ['Selenium', 'NLP', 'Sentence Transformers', 'Clustering', 'EDA'],
       link: 'https://sabudh.org/',
       icon: Briefcase,
       highlight: false,
     },
     {
-      company: 'SCG Foundation (Now Brillied)',
-      role: 'Intern',
-      duration: 'Previous Experience',
+      company: 'Brillied',
+      role: 'AI/ML Intern',
+      duration: 'May 2025',
       location: 'Remote/On-site',
-      description: 'Contributed to various projects at SCG Foundation, gaining valuable industry experience in technology and research-oriented work.',
-      achievement: 'Developed practical skills and understanding of organizational workflows.',
-      techStack: ['Research', 'Data Analysis', 'Project Management'],
+      description: 'Architected an AI-powered career counseling platform using GPT-4o-mini and ElevenLabs Conversational AI, processing 290+ career profiles with 50+ psychometric reports and 20+ mock interviews. Developed intelligent session management with real-time voice processing and a FastAPI backend, achieving 95% accuracy in career recommendations through advanced prompt engineering and RAG implementation.',
+      achievement: 'Achieved 95% accuracy in career recommendations; processed 290+ profiles with real-time AI voice interactions.',
+      techStack: ['GPT-4o-mini', 'ElevenLabs AI', 'FastAPI', 'PostgreSQL', 'Vue.js', 'OAuth 2.0', 'RAG', 'Python'],
       link: 'https://www.brillied.in/',
       icon: Building2,
       highlight: false,
@@ -79,16 +79,6 @@ const Experience = () => {
       title: 'Placement Coordinator (PC)',
       organization: 'Training and Placement NSUT',
       icon: Briefcase,
-    },
-    {
-      title: 'Tech and Research Lead',
-      organization: 'Enactus NSUT',
-      icon: Code,
-    },
-    {
-      title: 'Tech Team Member',
-      organization: 'IIF NSUT',
-      icon: Users,
     },
   ];
 
@@ -218,20 +208,6 @@ const Experience = () => {
                 </div>
               ))}
 
-              {/* Badges */}
-              <div className="mt-6 space-y-4">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-[#c0f748]/20 to-[#c0f748]/5 border border-[#c0f748]/30 text-center">
-                  <Award className="w-8 h-8 text-[#c0f748] mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Google Summer of Code</p>
-                  <p className="text-[#c0f748] text-xs">2025 Contributor</p>
-                </div>
-                
-                <div className="p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/30 text-center">
-                  <Building2 className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Microsoft</p>
-                  <p className="text-blue-400 text-xs">Upcoming Intern 2025</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

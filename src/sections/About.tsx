@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Download, Mail, Calendar, Award, Trophy, TrendingUp } from 'lucide-react';
+import { Download, Mail, TrendingUp } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -23,11 +23,6 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const stats = [
-    { value: '8.73', label: 'Current CGPA', icon: Award },
-    { value: '3+', label: 'AI Projects', icon: Calendar },
-    { value: "GSoC'25", label: 'Achievement', icon: Trophy },
-  ];
 
   const education = [
     {
@@ -55,6 +50,8 @@ const About = () => {
     { title: 'JEE Advanced Rank', value: '6,147', description: 'IIT entrance examination' },
     { title: 'DSA + CP Problems', value: '500+', description: 'Across platforms' },
     { title: 'School Topper', value: '3+ Years', description: 'Consecutive years' },
+    { title: 'Google Summer of Code 2025', value: 'GSoC', description: 'Open Climate Fix' },
+    { title: 'Goldman Sachs Finalist', value: 'GS', description: 'Possibilities Summit 2026' },
   ];
 
   return (
@@ -109,26 +106,6 @@ const About = () => {
                 <div className="absolute -inset-3 border border-[#c0f748]/20 rounded-2xl -z-10 translate-x-4 translate-y-4" />
               </div>
 
-              {/* Stats Grid */}
-              <div 
-                className={`grid grid-cols-3 gap-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: '400ms' }}
-              >
-                {stats.map((stat, index) => (
-                  <div 
-                    key={index}
-                    className="card-dark text-center p-5 group hover:border-[#c0f748]/50 transition-all duration-300"
-                  >
-                    <stat.icon className="w-6 h-6 text-[#c0f748] mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                    <p className="text-2xl lg:text-3xl font-bold text-white mb-1" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                      {stat.value}
-                    </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wider">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right Column - Bio & Education */}
@@ -145,7 +122,7 @@ const About = () => {
                   From marine biodiversity discovery systems to high-performance data streaming pipelines, I thrive in challenging environments where I can apply my knowledge of <span className="text-white">deep learning, generative AI, research methodologies, and distributed systems</span> to solve complex problems.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  As a <span className="text-[#c0f748] font-medium">Google Summer of Code 2025 contributor</span> at Open Climate Fix and an upcoming <span className="text-[#c0f748] font-medium">Microsoft intern</span>, I've honed my skills in cloud-native architectures, large-scale data processing, and cutting-edge AI research.
+                  As a <span className="text-[#c0f748] font-medium">Google Summer of Code 2025 contributor</span> at Open Climate Fix and an upcoming <span className="text-[#c0f748] font-medium">Microsoft intern</span>, I've honed my skills in cloud-native architectures, large-scale data processing, and cutting-edge AI research. I was also selected as a <span className="text-[#c0f748] font-medium">Finalist at the Goldman Sachs Possibilities Summit 2026</span>.
                 </p>
               </div>
 
@@ -176,7 +153,7 @@ const About = () => {
                 <h3 className="text-xl font-semibold text-white mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
                   KEY <span className="text-[#c0f748]">ACHIEVEMENTS</span>
                 </h3>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {achievements.map((achievement, index) => (
                     <div 
                       key={index}

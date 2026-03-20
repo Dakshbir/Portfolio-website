@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Code2, ExternalLink, Youtube, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -72,19 +72,11 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'dakshbir.singh.ug23@nsut.ac.in', href: 'mailto:dakshbir.singh.ug23@nsut.ac.in' },
+    { icon: Mail, label: 'Email', value: 'dakshbirkapoor@gmail.com', href: 'mailto:dakshbirkapoor@gmail.com' },
     { icon: Phone, label: 'Phone', value: '+91 8130362631', href: 'tel:+918130362631' },
     { icon: MapPin, label: 'Location', value: 'Delhi, India', href: '#' },
   ];
 
-  const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/dakshbir-singh-kapoor-26210b286/', color: '#0077b5' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com/Dakshbir', color: '#c0f748' },
-    { icon: Code2, label: 'LeetCode', href: 'https://leetcode.com/u/Dakshbir/', color: '#ffa116' },
-    { icon: ExternalLink, label: 'Codeforces', href: 'https://codeforces.com/profile/dakshbir', color: '#c0f748' },
-    { icon: FileText, label: 'Gist', href: 'https://gist.github.com/Dakshbir/4acb5f5d739ef8f92f062b44882b2e1a', color: '#c0f748' },
-    { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/watch?v=WOB1sP4JKfU', color: '#ff0000' },
-  ];
 
   return (
     <section 
@@ -148,24 +140,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Social Links */}
-              <div>
-                <p className="text-gray-500 text-sm mb-4">Follow me on</p>
-                <div className="flex flex-wrap gap-3">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-xl bg-[#161616] border border-[#2a2a2a] flex items-center justify-center text-gray-400 hover:text-[#c0f748] hover:border-[#c0f748] transition-all duration-300 hover:scale-110"
-                      title={social.label}
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Right Column - Contact Form */}

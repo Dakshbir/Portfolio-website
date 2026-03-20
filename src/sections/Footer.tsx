@@ -1,4 +1,4 @@
-import { Heart, ArrowUp, Linkedin, Github, Code2, ExternalLink, Youtube, FileText } from 'lucide-react';
+import { Heart, ArrowUp, Linkedin, Github, Code2, ExternalLink, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -19,8 +19,7 @@ const Footer = () => {
     { icon: Github, href: 'https://github.com/Dakshbir', label: 'GitHub' },
     { icon: Code2, href: 'https://leetcode.com/u/Dakshbir/', label: 'LeetCode' },
     { icon: ExternalLink, href: 'https://codeforces.com/profile/dakshbir', label: 'Codeforces' },
-    { icon: FileText, href: 'https://gist.github.com/Dakshbir/4acb5f5d739ef8f92f062b44882b2e1a', label: 'Gist' },
-    { icon: Youtube, href: 'https://www.youtube.com/watch?v=WOB1sP4JKfU', label: 'YouTube' },
+    { icon: Mail, href: 'mailto:dakshbirkapoor@gmail.com', label: 'Gmail' },
   ];
 
   return (
@@ -43,12 +42,6 @@ const Footer = () => {
               DAKSHBIR SINGH KAPOOR
             </h3>
             
-            {/* Tagline */}
-            <p className="text-gray-400 mb-6 max-w-lg">
-              AI/ML Research Engineer & Data Scientist crafting intelligent systems 
-              that bridge the gap between data and discovery.
-            </p>
-
             {/* Social Links */}
             <div className="flex gap-3 mb-8">
               {socialLinks.map((social, index) => (

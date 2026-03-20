@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Code2, FileText } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -158,7 +158,7 @@ const Hero = () => {
                 style={{ transitionDelay: '600ms' }}
               >
                 <p className="text-xl sm:text-2xl text-gray-300 font-light">
-                  AI/ML Research Engineer <span className="text-[#c0f748]">&</span> Data Scientist
+                  AI/ML Research Engineer <span className="text-[#c0f748]">&</span> Software Developer
                 </p>
               </div>
               
@@ -168,8 +168,8 @@ const Hero = () => {
                 style={{ transitionDelay: '800ms' }}
               >
                 <p className="text-gray-400 text-lg max-w-xl leading-relaxed">
-                  Crafting intelligent systems that bridge the gap between data and discovery. 
-                  Specializing in deep learning, generative AI, research, and cloud-native solutions.
+                  I don't just build models. I build systems that ship, scale, and solve real problems.
+                  Specializing in machine learning, generative AI, research, and cloud-native solutions.
                 </p>
               </div>
               
@@ -186,45 +186,6 @@ const Hero = () => {
                 </a>
               </div>
               
-              {/* Social Links */}
-              <div 
-                className={`flex gap-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: '1200ms' }}
-              >
-                <a 
-                  href="https://www.linkedin.com/in/dakshbir-singh-kapoor-26210b286/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-[#161616] border border-[#2a2a2a] flex items-center justify-center text-gray-400 hover:text-[#c0f748] hover:border-[#c0f748] transition-all duration-300 hover:scale-110"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a 
-                  href="https://github.com/Dakshbir" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-[#161616] border border-[#2a2a2a] flex items-center justify-center text-gray-400 hover:text-[#c0f748] hover:border-[#c0f748] transition-all duration-300 hover:scale-110"
-                >
-                  <Github size={20} />
-                </a>
-                <a 
-                  href="https://leetcode.com/u/Dakshbir/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-[#161616] border border-[#2a2a2a] flex items-center justify-center text-gray-400 hover:text-[#c0f748] hover:border-[#c0f748] transition-all duration-300 hover:scale-110"
-                >
-                  <Code2 size={20} />
-                </a>
-                <a 
-                  href="https://gist.github.com/Dakshbir/4acb5f5d739ef8f92f062b44882b2e1a" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-[#161616] border border-[#2a2a2a] flex items-center justify-center text-gray-400 hover:text-[#c0f748] hover:border-[#c0f748] transition-all duration-300 hover:scale-110"
-                  title="Gist"
-                >
-                  <FileText size={20} />
-                </a>
-              </div>
             </div>
             
             {/* Right Side - Decorative Element */}
@@ -253,6 +214,9 @@ const Hero = () => {
                 </div>
                 <div className="absolute top-1/2 -right-8 px-4 py-2 rounded-full bg-[#161616] border border-[#c0f748]/30 text-[#c0f748] text-sm font-medium animate-float" style={{ animationDelay: '2s' }}>
                   AI/ML
+                </div>
+                <div className="absolute top-1/4 -left-8 px-4 py-2 rounded-full bg-[#161616] border border-[#c0f748]/30 text-[#c0f748] text-sm font-medium animate-float" style={{ animationDelay: '1.5s' }}>
+                  Goldman Sachs
                 </div>
               </div>
             </div>

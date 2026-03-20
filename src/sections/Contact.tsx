@@ -46,43 +46,18 @@ const Contact = () => {
       // Google Apps Script Web App URL - Replace with your actual deployment URL
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoKwZPXHq_G6vu0o6acOY2zvWS119C8Ia3zLPTdnjj2dEsYcLQJldHuUqHRC-HTQ3R/exec';
       
-      // Use hidden iframe + form POST — survives Apps Script redirect, params intact
-      await new Promise<void>((resolve) => {
-        const iframe = document.createElement('iframe');
-        iframe.name = 'gs_iframe';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = GOOGLE_SCRIPT_URL;
-        form.target = 'gs_iframe';
-        form.style.display = 'none';
-
-        const fields: Record<string, string> = {
+      // POST with text/plain + JSON body — Apps Script reads via e.postData.contents
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
           timestamp: new Date().toISOString(),
-        };
-
-        Object.entries(fields).forEach(([key, value]) => {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = value;
-          form.appendChild(input);
-        });
-
-        document.body.appendChild(form);
-        form.submit();
-
-        setTimeout(() => {
-          document.body.removeChild(form);
-          document.body.removeChild(iframe);
-          resolve();
-        }, 1500);
+        }),
       });
       
       toast.success('Message sent successfully! I\'ll get back to you soon.');
